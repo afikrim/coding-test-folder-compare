@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -58,7 +57,7 @@ func getFiles(root string) [][]string {
 	for _, d := range dir {
 		file, err := ioutil.ReadDir(d)
 		if err != nil {
-			log.Fatal(err)
+			panic(err)
 		}
 
 		if strings.Contains(d, "./source") {
